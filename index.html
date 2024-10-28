@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบเช็คชื่อนักศึกษา</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">ระบบเช็คชื่อนักศึกษา</h1>
+        
+        <!-- ฟอร์มเช็คชื่อ -->
+        <form id="checkInForm">
+            <div class="mb-3">
+                <label for="studentId" class="form-label">รหัสนักศึกษา</label>
+                <input type="text" class="form-control" id="studentId" placeholder="กรอกรหัสนักศึกษา">
+            </div>
+            <div class="mb-3">
+                <label for="attendanceStatus" class="form-label">สถานะ</label>
+                <select class="form-select" id="attendanceStatus">
+                    <option value="เช็คชื่อแล้ว">เช็คชื่อแล้ว</option>
+                    <option value="ขาด">ขาด</option>
+                    <option value="ลา">ลา</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary w-100" onclick="checkIn()">บันทึกสถานะ</button>
+        </form>
+        
+        <!-- ตารางแสดงข้อมูลการเช็คชื่อ -->
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>รหัสนักศึกษา</th>
+                    <th>สถานะ</th>
+                    <th>ลบ</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceTable">
+                <!-- ข้อมูลการเช็คชื่อจะถูกแสดงที่นี่ -->
+            </tbody>
+        </table>
+
+      
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
